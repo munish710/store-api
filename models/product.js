@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
-  name: { typ: String, requred: [true, "Product Name must be provided"] },
-  price: { typ: Number, requred: [true, "Product price must be provided"] },
+  name: { type: String, required: [true, "Product Name must be provided"] },
+  price: { type: Number, required: [true, "Product price must be provided"] },
   featured: {
     type: Boolean,
     default: false,
@@ -19,9 +19,8 @@ const productSchema = new mongoose.Schema({
     type: String,
     enum: {
       values: ["ikea", "liddy", "caressa", "marcos"],
-      message: "{VALUE} is not supported",
+      message: `{VALUE} is not supported`,
     },
-    // enum: ["ikea", "liddy", "caressa", "marcos"],
   },
 });
 
